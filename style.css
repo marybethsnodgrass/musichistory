@@ -40,23 +40,17 @@ form {
   padding: 0px 15px;
 }
 
-form label {
+/*form label {
   display: block;
   padding-top: 5px;
   padding-bottom: 5px;
-}
-
-/*.n1 {
-  display: block;
 }*/
 
-#block {
-  display:block;
-}
 .button {
     border: 2px solid black;
     margin:auto;
     margin-top: 5px;
+    clear:right;
 
 }
 
@@ -70,6 +64,18 @@ form label {
   width: 63.5%;
   display: inline-block;
   height: 400px;
+}
+
+.left {
+  float:left;
+}
+
+.right {
+  float:right;
+}
+
+.row {
+  clear: both;
 }
 
 section {
