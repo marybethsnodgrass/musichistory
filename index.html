@@ -23,76 +23,108 @@
 
 <div id="search">
   <form>
-    <label for="songlength">Song length: (in seconds)</label>
-    <input name="songlength" type="range" min="0" step="5" value="200">
-    <label for="artist">Artist:</label>
-    <select name="artist" value="Options">
-      <option>Options</option>
-    </select>
-    <label for="album">Album:</label>
-    <select name="album" value="Options">
-      <option>Options</option>
-    </select>
-    <label name="genre">Genre</label>
-    <input name="rock" value="rock" type="checkbox">Rock
-    <input name="classical" value="classical" type="checkbox">Classical
-    <input class="n2" name="pop" value="pop" type="checkbox">Pop
-    <input name="jazz" value="jazz" type="checkbox">Jazz
-    <input class="n2"name="blues" value="blues" type="checkbox">Blues
-    <input name="hip-hop" value="hip-hop" type="checkbox">Hip-Hop
-    <input type="filter" value="filter">
+    <p>
+      <label for="songlength">Song length: (in seconds)</label>
+      <input name="songlength" type="range" min="0" step="5" value="200">
+    <p>
+    
+    <p>
+      <label for="artist">Artist:</label>
+      <select name="artist" value="Options">
+        <option>Options</option>
+      </select>
+    </p>
+
+    <p>
+      <label for="album">Album:</label>
+      <select name="album" value="Options">
+        <option>Options</option>
+      </select>
+    <p>
+
+    <p>
+      <label name="genre">Genre</label>
+      
+      <p class="row">
+        <input name="rock" value="rock" type="checkbox">Rock
+        <input name="classical" value="classical" type="checkbox">Classical
+      </p>
+
+      <p class="row">
+        <input name="pop" value="pop" type="checkbox">Pop
+        <input name="jazz" value="jazz" type="checkbox">Jazz
+      </p>
+
+      <p class="row">
+        <input name="blues" value="blues" type="checkbox">Blues
+        <input name="hip-hop" value="hip-hop" type="checkbox">Hip-Hop
+      </p>
+
+      <input class="button" type="submit" value="Filter">
+    </p>
   </form>
 </div>
 
 <div id="results">
-  <div>
-    </div><h1>Song Name</h1>
-    <div>
-      Artist Name
+  <section>
+    <div><h1>Song Name</h1>
+      <span>
+        Artist Name
+      <span>
+
+      <span class="center-span">
+        Album Name
+      </span>
+
+      <span>
+        Genre
+      </span>
     </div>
-    <div class="center-div">
-      Album Name
+
+    <div><h1>Song Name</h1>
+      <span>
+        Artist Name
+      </span>
+
+      <span class="center-span">
+        Album Name
+      </span>
+
+      <span>
+        Genre
+      </span>
+
     </div>
-    <div>
+
+    <div><h1>Song Name</h1>
+      <span>
+        Artist Name
+      </span>
+
+      <span class="center-span">
+        Album Name
+      </span>
+
+      <span>
       Genre
+      </span>
+
     </div>
-  </div>
-  <div>
-    </div><h1>Song Name</h1>
-    <div>
-      Artist Name
+
+    <div><h1>Song Name</h1>
+      <span>
+        Artist Name
+      </span>
+
+      <span class="center-span">
+        Album Name
+      </span>
+
+      <span>
+        Genre
+      </span>
     </div>
-    <div class="center-div">
-      Album Name
-    </div>
-    <div>
-      Genre
-    </div>
-  </div> 
-  <div>
-    </div><h1>Song Name</h1>
-    <div>
-      Artist Name
-    </div>
-    <div class="center-div">
-      Album Name
-    </div>
-    <div>
-      Genre
-    </div>
-  </div>
-  <div>
-    </div><h1>Song Name</h1>
-    <div>
-      Artist Name
-    </div>
-    <div class="center-div">
-      Album Name
-    </div>
-    <div>
-      Genre
-    </div>
-  </div>
+  </section>
 </div>
 </body>
 

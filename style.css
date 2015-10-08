@@ -1,8 +1,15 @@
+html {
+  max-width: 100%;
+}
 header {
   border: 2px solid black;
   background-color: #FFB4B0;
-  margin: 15px 100px;
+  margin-left: 7.5%;
+  margin-bottom: 5px;
+  margin-top: 30px;
+  margin-right: 7.5%;
   padding: 25px;
+  width:80.5%;
 }
 
 header div {
@@ -17,8 +24,15 @@ header div {
 
 #search {
   background-color: #4DD7FA;
+  margin-left: 7.5%;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  margin-right: 5px;
+  float: left;
+  width: 20%;
   border: 2px solid black;
-  margin: 15px 100px;
+  height:400px;
+
 }
 
 form {
@@ -28,14 +42,50 @@ form {
 
 form label {
   display: block;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
-.n2 {
+/*.n1 {
   display: block;
+}*/
+
+#block {
+  display:block;
+}
+.button {
+    border: 2px solid black;
+    margin:auto;
+    margin-top: 5px;
+
 }
 
 #results {
   background-color: #FEFAC0;
   border: 2px solid black;
-  margin: 15px 100px;
+  margin-left: 5px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  margin-right: 7.5%;
+  width: 63.5%;
+  display: inline-block;
+  height: 400px;
+}
+
+section {
+  margin: 15px;
+  padding: 0px 15px;
+}
+
+div h1 {
+  color: #785616;
+}
+
+.center-span {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+
+span {
+    padding: 0px 15px;
 }
