@@ -15,7 +15,7 @@ Marybeth
     <div>
       <a href="http://www.musichistory.com/viewmusic.html">View Music</a>
     </div>
-    <div class="center-div">
+    <div class="center">
       <a href="http://www.musichistory.com/addmusic.html">Add Music</a>
     </div>
     <div>
@@ -23,123 +23,124 @@ Marybeth
     </div>
   </nav>
 </header>
-
-<div id="search">
-  <form>
-    <p>
-      <label for="songlength">Song length: (in seconds)</label>
-      <input name="songlength" type="range" min="0" step="5" value="200">
-    </p>
-    
-    <p>
-      <label for="artist">Artist:</label>
-      <select name="artist" value="Options">
-        <option>Options</option>
-      </select>
-    </p>
-
-    <p>
-      <label for="album">Album:</label>
-      <select name="album" value="Options">
-        <option>Options</option>
-      </select>
-    </p>
-
-    <div>
-      <label name="genre">Genre</label>
+<div class="flex-container">
+  <div id="search">
+    <form>
+      <p>
+        <label for="songlength">Song length: (in seconds)</label>
+        <input name="songlength" type="range" min="0" step="5" value="200">
+      </p>
       
-      <div class="left">
-        <input name="rock" value="rock" type="checkbox">Rock
-      </div>
+      <p>
+        <label for="artist">Artist:</label>
+        <select name="artist" value="Options">
+          <option>Options</option>
+        </select>
+      </p>
 
-      <div class="right">
-        <input name="classical" value="classical" type="checkbox">Classical
-      </div>
+      <p>
+        <label for="album">Album:</label>
+        <select name="album" value="Options">
+          <option>Options</option>
+        </select>
+      </p>
 
-      <div class="row"> 
+      <div>
+        <label name="genre">Genre</label>
+        
         <div class="left">
-          <input name="pop" value="pop" type="checkbox">Pop
+          <input name="rock" value="rock" type="checkbox">Rock
         </div>
 
         <div class="right">
-          <input name="jazz" value="jazz" type="checkbox"> Jazz
+          <input name="classical" value="classical" type="checkbox">Classical
+        </div>
+
+        <div class="row"> 
+          <div class="left">
+            <input name="pop" value="pop" type="checkbox">Pop
+          </div>
+
+          <div class="right">
+            <input name="jazz" value="jazz" type="checkbox"> Jazz
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="left">
+            <input name="blues" value="blues" type="checkbox">Blues
+          </div>
+
+          <div class="right">
+            <input name="hip-hop" value="hip-hop" type="checkbox">Hip-Hop
+          </div>
         </div>
       </div>
+      <input class="button" type="submit" value="Filter">
+    </form>
+  </div>
 
-      <div class="row">
-        <div class="left">
-          <input name="blues" value="blues" type="checkbox">Blues
-        </div>
+  <div id="results">
+    <section>
+      <div><h1>Kerosene</h1>
+        <span>
+          Miranda Lambert
+        <span>
 
-        <div class="right">
-          <input name="hip-hop" value="hip-hop" type="checkbox">Hip-Hop
-        </div>
+        <span class="center">
+          Kerosene
+        </span>
+
+        <span>
+          Country
+        </span>
       </div>
-    </div>
-    <input class="button" type="submit" value="Filter">
-  </form>
-</div>
 
-<div id="results">
-  <section>
-    <div><h1>Song Name</h1>
-      <span>
-        Artist Name
-      <span>
+      <div><h1>Slide</h1>
+        <span>
+          Goo Goo Dolls
+        </span>
 
-      <span class="center-span">
-        Album Name
-      </span>
+        <span class="center">
+          Dizzy Up the Girl
+        </span>
 
-      <span>
-        Genre
-      </span>
-    </div>
+        <span>
+          Rock
+        </span>
 
-    <div><h1>Song Name</h1>
-      <span>
-        Artist Name
-      </span>
+      </div>
 
-      <span class="center-span">
-        Album Name
-      </span>
+      <div><h1>Vertigo</h1>
+        <span>
+          U2
+        </span>
 
-      <span>
-        Genre
-      </span>
+        <span class="center">
+          How to Dismantle an Atomic Bomb
+        </span>
 
-    </div>
+        <span>
+        Rock
+        </span>
 
-    <div><h1>Song Name</h1>
-      <span>
-        Artist Name
-      </span>
+      </div>
 
-      <span class="center-span">
-        Album Name
-      </span>
+      <div><h1>Bad Girls</h1>
+        <span>
+          M.I.A.
+        </span>
 
-      <span>
-      Genre
-      </span>
+        <span class="center">
+          Matangi
+        </span>
 
-    </div>
-
-    <div><h1>Song Name</h1>
-      <span>
-        Artist Name
-      </span>
-
-      <span class="center-span">
-        Album Name
-      </span>
-
-      <span>
-        Genre
-      </span>
-    </div>
-  </section>
+        <span>
+          Hip-Hop
+        </span>
+      </div>
+    </section>
+  </div>
 </div>
 
 <script src="script.js"> </script>
