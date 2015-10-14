@@ -9,3 +9,9 @@ songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little
 songs[songs.length] = "Slide > by Goo Goo Dolls on the album Dizzy Up the Girl"
 songs.unshift = "Kerosene > by Miranda Lambert on the album Kerosene"
 
+var song0element = document.getElementById('song0');
+var song0text = song0element.innerHTML;
+
+song0text = songs[0];
+song0element.innerHTML = song0text;
+
