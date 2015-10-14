@@ -17,10 +17,13 @@ header {
   background-color: #FFB4B0;
   margin-left: 7.5%;
   margin-bottom: 5px;
-  margin-top: 30px;
+  margin-top: 0px;
   margin-right: 7.5%;
   padding: 25px;
-  width:80.5%;
+  flex-grow: 100%;
+  height: 20px;
+  position: fixed;
+  width: 390px;
 }
 
 header div {
@@ -33,6 +36,10 @@ header div {
 .flex-container {
   display: -webkit-flex; /* Safari */
   display: flex;
+  flex-wrap: nowrap;
+  height: 1000px;
+  margin-top: 0px;
+
 }
 
 /*Search div */
@@ -40,18 +47,23 @@ header div {
   background-color: #4DD7FA;
   margin-left: 7.5%;
   margin-bottom: 15px;
-  margin-top: 5px;
+  margin-top: 85px;
   margin-right: 5px;
-  float: left;
-  width: 20%;
+  min-width:30%;
+  max-width:30%;
   border: 2px solid black;
+  flex-grow: 1;
 }
 
+label {
+  display: block;
+  padding-top: 20px;
+
+}
 form {
   margin: 15px;
   padding: 0px 15px;
 }
-
 
 .button {
     border: 2px solid black;
@@ -59,28 +71,46 @@ form {
     margin-top: 5px;
 }
 
-.left {
-  float:left;
+
+#song-filter label, #song-filter select {
+  margin: 4px 0 7px 0;
+  padding-top: 10px;
 }
 
-.right {
-  float:right;
+#song-filter select, #song-filter label, #container {
+  display: block;
 }
 
-.row {
-  clear: both;
+#container {
+  margin: 15px 0 0 0;
+  text-align: center;
 }
+
 
 /*Results Div*/
+
+section div:nth-child(2n) {
+  background-color: #FFF5EE;
+}
+
+section div:nth-child(2n+1) {
+  background-color: #F5FFFA;
+}
+
+section div:first-child {
+  font-weight: bold;
+}
+
 #results {
   background-color: #FEFAC0;
   border: 2px solid black;
   margin-left: 5px;
   margin-bottom: 15px;
-  margin-top: 5px;
+  margin-top: 85px;
   margin-right: 7.5%;
-  width: 63.5%;
-  display: inline-block;
+  flex-grow: 10;
+  max-width: 55%
+  min-width 55%;
 }
 
 section {

@@ -5,81 +5,48 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body>
-<div id="container">
-Marybeth
-</div>
-
-<header>
-  <nav>
-    <div>
-      <a href="http://www.musichistory.com/viewmusic.html">View Music</a>
-    </div>
-    <div class="center">
-      <a href="http://www.musichistory.com/addmusic.html">Add Music</a>
-    </div>
-    <div>
-      <a href="http://www.musichistory.com/profile.html">Profile</a>
-    </div>
-  </nav>
-</header>
-<div class="flex-container">
-  <div id="search">
-    <form>
-      <p>
-        <label for="songlength">Song length: (in seconds)</label>
-        <input name="songlength" type="range" min="0" step="5" value="200">
-      </p>
-      
-      <p>
-        <label for="artist">Artist:</label>
-        <select name="artist" value="Options">
-          <option>Options</option>
-        </select>
-      </p>
-
-      <p>
-        <label for="album">Album:</label>
-        <select name="album" value="Options">
-          <option>Options</option>
-        </select>
-      </p>
-
+<body class="flex-container">
+  <header>
+    <nav>
       <div>
-        <label name="genre">Genre</label>
-        
-        <div class="left">
-          <input name="rock" value="rock" type="checkbox">Rock
-        </div>
-
-        <div class="right">
-          <input name="classical" value="classical" type="checkbox">Classical
-        </div>
-
-        <div class="row"> 
-          <div class="left">
-            <input name="pop" value="pop" type="checkbox">Pop
-          </div>
-
-          <div class="right">
-            <input name="jazz" value="jazz" type="checkbox"> Jazz
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="left">
-            <input name="blues" value="blues" type="checkbox">Blues
-          </div>
-
-          <div class="right">
-            <input name="hip-hop" value="hip-hop" type="checkbox">Hip-Hop
-          </div>
-        </div>
+        <a href="http://www.musichistory.com/viewmusic.html">View Music</a>
       </div>
-      <input class="button" type="submit" value="Filter">
+      <div class="center">
+        <a href="http://www.musichistory.com/addmusic.html">Add Music</a>
+      </div>
+      <div>
+        <a href="http://www.musichistory.com/profile.html">Profile</a>
+      </div>
+    </nav>
+  </header>
+  <div id="search" class="border">
+    <form action="#" method="POST" id="song-filter">
+      <label for="length">Song length:</label>
+      <input type="range" name="length" min="1" max="6" step=".5">
+      <label for="artist-select">Artist:</label>
+      <select id="artist-select" name="artist-select">
+      </select>
+      <label for="album-select">Album:</label>
+      <select id="album-select" name="album-select">
+      </select>
+      <label for="genre-options">Genre:</label>
+      <p>
+        <input type="checkbox" name="genre-options" value="rock"> Rock
+        <input type="checkbox" name="genre-options" value="pop"> Pop
+      </p>
+      <p>  
+        <input type="checkbox" name="genre-options" value="blues"> Blues
+        <input type="checkbox" name="genre-options" value="jlassical"> Classical
+      </p>
+      <p>
+        <input type="checkbox" name="genre-options" value="jazz"> Jazz
+        <input type="checkbox" name="genre-options" value="hip-hop"> Hip-hop
+      </p>
+      <div id="container">
+        <input type="submit" id="filterButton" value="Filter">
+      </div>  
     </form>
   </div>
-
   <div id="results">
     <section>
       <div><h1>Kerosene</h1>
@@ -142,7 +109,6 @@ Marybeth
     </section>
   </div>
 </div>
-
 <script src="script.js"> </script>
 </body>
 
