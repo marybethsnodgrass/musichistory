@@ -6,25 +6,28 @@
   </head>
 
   <body>
-    <header>
+    <header id="nav-header">
       <nav>
         <div>
-          <a id="list-music-nav" href="http://www.musichistory.com/viewmusic.html">List Music</a>
+          <a id="list-music-link" href="#">List Music</a>
         </div>
         <div class="center">
-          <a id="add-music-nav" href="http://www.musichistory.com/addmusic.html">Add Music</a>
+          <a id="add-music-link" href="#">Add Music</a>
         </div>
         <div>
-          <a id="profile#-nav" href="http://www.musichistory.com/profile.html">Profile</a>
+          <a id="profile-link" href="#">Profile</a>
         </div>
       </nav>
     </header> 
 
-  <!--  add music controls -->
+  <!--  add music view -->
     <div id="add-music">
       Song <input type="text">
       Artist <input type="text">
       Album <input type="text">
+      <div id="addButton-div">
+          <input type="submit" id="addButton" value="Add">
+        </div>  
     </div>
       
   <!--  list music and search boxes -->
@@ -120,5 +123,6 @@
       </div>
     </div>
   <script src="script.js"> </script>
+  <script src="add.js"> </script>
   </body>
 </html>
