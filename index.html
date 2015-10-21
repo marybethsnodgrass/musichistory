@@ -1,115 +1,124 @@
 <!doctype html>
 <html>
 
-<head>
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
 
-<body class="flex-container">
-  <header>
-    <nav>
-      <div>
-        <a href="http://www.musichistory.com/viewmusic.html">View Music</a>
+  <body>
+    <header>
+      <nav>
+        <div>
+          <a id="list-music-nav" href="http://www.musichistory.com/viewmusic.html">List Music</a>
+        </div>
+        <div class="center">
+          <a id="add-music-nav" href="http://www.musichistory.com/addmusic.html">Add Music</a>
+        </div>
+        <div>
+          <a id="profile#-nav" href="http://www.musichistory.com/profile.html">Profile</a>
+        </div>
+      </nav>
+    </header> 
+
+  <!--  add music controls -->
+    <div id="add-music">
+      Song <input type="text">
+      Artist <input type="text">
+      Album <input type="text">
+    </div>
+      
+  <!--  list music and search boxes -->
+    <div id="list-music"> 
+      <div id="search" class="border">
+        <form action="#" method="POST" id="song-filter">
+          <label for="length">Song length:</label>
+          <input type="range" name="length" min="1" max="6" step=".5">
+          <label for="artist-select">Artist:</label>
+          <select id="artist-select" name="artist-select">
+          </select>
+          <label for="album-select">Album:</label>
+          <select id="album-select" name="album-select">
+          </select>
+          <label for="genre-options">Genre:</label>
+          <p>
+            <input type="checkbox" name="genre-options" value="rock"> Rock
+            <input type="checkbox" name="genre-options" value="pop"> Pop
+          </p>
+          <p>  
+            <input type="checkbox" name="genre-options" value="blues"> Blues
+            <input type="checkbox" name="genre-options" value="jlassical"> Classical
+          </p>
+          <p>
+            <input type="checkbox" name="genre-options" value="jazz"> Jazz
+            <input type="checkbox" name="genre-options" value="hip-hop"> Hip-hop
+          </p>
+          <div id="filter-div">
+            <input type="submit" id="filterButton" value="Filter">
+          </div>  
+        </form>
       </div>
-      <div class="center">
-        <a href="http://www.musichistory.com/addmusic.html">Add Music</a>
+      <div id="results">
+        <section>
+          <div><h1>Kerosene</h1>
+            <span>
+              Miranda Lambert
+            <span>
+
+            <span class="center">
+              Kerosene
+            </span>
+
+            <span>
+              Country
+            </span>
+          </div>
+
+          <div><h1>Slide</h1>
+            <span>
+              Goo Goo Dolls
+            </span>
+
+            <span class="center">
+              Dizzy Up the Girl
+            </span>
+
+            <span>
+              Rock
+            </span>
+
+          </div>
+
+          <div><h1>Vertigo</h1>
+            <span>
+              U2
+            </span>
+
+            <span class="center">
+              How to Dismantle an Atomic Bomb
+            </span>
+
+            <span>
+            Rock
+            </span>
+
+          </div>
+
+          <div><h1>Bad Girls</h1>
+            <span>
+              M.I.A.
+            </span>
+
+            <span class="center">
+              Matangi
+            </span>
+
+            <span>
+              Hip-Hop
+            </span>
+          </div>
+        </section>
       </div>
-      <div>
-        <a href="http://www.musichistory.com/profile.html">Profile</a>
-      </div>
-    </nav>
-  </header>
-  <div id="search" class="border">
-    <form action="#" method="POST" id="song-filter">
-      <label for="length">Song length:</label>
-      <input type="range" name="length" min="1" max="6" step=".5">
-      <label for="artist-select">Artist:</label>
-      <select id="artist-select" name="artist-select">
-      </select>
-      <label for="album-select">Album:</label>
-      <select id="album-select" name="album-select">
-      </select>
-      <label for="genre-options">Genre:</label>
-      <p>
-        <input type="checkbox" name="genre-options" value="rock"> Rock
-        <input type="checkbox" name="genre-options" value="pop"> Pop
-      </p>
-      <p>  
-        <input type="checkbox" name="genre-options" value="blues"> Blues
-        <input type="checkbox" name="genre-options" value="jlassical"> Classical
-      </p>
-      <p>
-        <input type="checkbox" name="genre-options" value="jazz"> Jazz
-        <input type="checkbox" name="genre-options" value="hip-hop"> Hip-hop
-      </p>
-      <div id="container">
-        <input type="submit" id="filterButton" value="Filter">
-      </div>  
-    </form>
-  </div>
-  <div id="results">
-    <section>
-      <div><h1>Kerosene</h1>
-        <span>
-          Miranda Lambert
-        <span>
-
-        <span class="center">
-          Kerosene
-        </span>
-
-        <span>
-          Country
-        </span>
-      </div>
-
-      <div><h1>Slide</h1>
-        <span>
-          Goo Goo Dolls
-        </span>
-
-        <span class="center">
-          Dizzy Up the Girl
-        </span>
-
-        <span>
-          Rock
-        </span>
-
-      </div>
-
-      <div><h1>Vertigo</h1>
-        <span>
-          U2
-        </span>
-
-        <span class="center">
-          How to Dismantle an Atomic Bomb
-        </span>
-
-        <span>
-        Rock
-        </span>
-
-      </div>
-
-      <div><h1>Bad Girls</h1>
-        <span>
-          M.I.A.
-        </span>
-
-        <span class="center">
-          Matangi
-        </span>
-
-        <span>
-          Hip-Hop
-        </span>
-      </div>
-    </section>
-  </div>
-</div>
-<script src="script.js"> </script>
-</body>
-
+    </div>
+  <script src="script.js"> </script>
+  </body>
 </html>
