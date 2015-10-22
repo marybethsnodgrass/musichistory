@@ -14,6 +14,7 @@ addMusicLink.addEventListener("click", function() {
 	addMusicView.classList.remove("hidden");
 
 	listView.classList.add("hidden");
+	listView.classList.remove("visible");
 
 })
 
