@@ -1,26 +1,26 @@
 $(document).ready(function() {
 
-	var listLink = document.getElementById("list-music-link");
-	var listView = document.getElementById("list-music");
-	var addMusicLink = document.getElementById("add-music-link");
-	var addMusicView = document.getElementById("add-music");
+	var listLink = $("#list-music-link");
+	var listView = $("#list-music");
+	var addMusicLink = $("#add-music-link");
+	var addMusicView = $("#add-music");
 
 
-	listLink.addEventListener("click", function() {
-		listView.classList.add("visible");
-		listView.classList.remove("hidden");
+	$("#list-music-link").click(function() {
+		$("#list-music").addClass("visible");
+		$("#list-music").removeClass("hidden");
 
-		addMusicView.classList.add("hidden");
-		addMusicView.classList.remove("visible");
+		$("#add-music").addClass("hidden");
+		$("#add-music").removeClass("visible");
 	});
 
 
-	addMusicLink.addEventListener("click", function() {
-		addMusicView.classList.add("visible");
-		addMusicView.classList.remove("hidden");
+	$("#add-music-link").click(function() {
+		$("#add-music").addClass("visible");
+		$("#add-music").removeClass("hidden");
 
-		listView.classList.add("hidden");
-		listView.classList.remove("visible");
+		$("#list-music").addClass("hidden");
+		$("#list-music").removeClass("visible");
 	})
 
 });
