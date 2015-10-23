@@ -6,6 +6,7 @@
   </head>
 
   <body>
+    <!--  NAV BAR -->
     <header id="nav-header">
       <nav>
         <div>
@@ -20,7 +21,7 @@
       </nav>
     </header> 
 
-  <!--  add music view -->
+    <!--  add music view -->
     <div id="add-music" class="hidden">
       <div id="add-music-content"> 
         Song <input type="text" id="songInput">
@@ -32,8 +33,10 @@
       </div>
     </div>
       
-  <!--  list music and search boxes -->
+    <!--  list music and search boxes -->
     <div id="list-music"> 
+
+      <!--  Search box-->
       <div id="search" class="border">
         <form action="#" method="POST" id="song-filter">
           <label for="length">Song length:</label>
@@ -62,10 +65,12 @@
           </div>  
         </form>
       </div>
+
+      <!--  Song List/Results box--> 
       <div id="results">
-        <section id="list-of-songs">
-        
+        <section id="list-of-songs">      
         </section>
+        <button id="moreButton">'More>'</button>
       </div>
     </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"> </script>

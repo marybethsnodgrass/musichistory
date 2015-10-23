@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 
-// ******* navigation links *******//
+	// ******* navigation links *******//
 	$("#list-music-link").click(function() {
 		$("#list-music").addClass("visible");
 		$("#list-music").removeClass("hidden");
@@ -19,10 +19,18 @@ $(document).ready(function() {
 		$("#list-music").removeClass("visible");
 	});
 
+	// ********* delete song function****** //
+	var deleteSong = function() {
+		$(this).parent().remove();
+	};
+	$(document).on("click", ".deleteButton", deleteSong);
 
+	// ********* append songs function ****** //
+	var appendSongs = function(song) {
+	    $("#list-of-songs").append("<div> <h1>" + song.title + "</h1> <span>" + song.artist + "</span> <span class='center'>" + song.album + "</span> <span>" + song.genre + "</span> <button class='deleteButton'>Delete</button> </div>");
+	};
 
-
-// ********* AJAX .DONE ****** //
+	// ********* AJAX ON SONGS.JSON ****** //
     $.ajax({
 	    url: "data/songs.json"
     }).done(function(contentsOfTheFile) {
@@ -33,21 +41,22 @@ $(document).ready(function() {
 	    console.log("the contents of songs.json");
 	    console.log(contentsOfTheFile.songs);
 
-// ********* ADD SONG FUNCTIONALITY ****** //	    
-	    contentsOfTheFile.songs.forEach(function(song) {
-		    $("#list-of-songs").append("<div> <h1>" + song.title + "</h1> <span>" + song.artist + "</span> <span class='center'>" + song.album + "</span> <span>" + song.genre + "</span> <button class='deleteButton'>Delete</button> </div>");
-		});
-
-// ********* DELETE SONG FUNCTIONALITY ****** //
-		$(".deleteButton").click(function() {
-			$(this).parent().remove();
+		// ********* ADD SONG FUNCTIONALITY ****** //	    
+	    contentsOfTheFile.songs.forEach(appendSongs);
 	});
 
+	 // ********* AJAX ON SONGS2.JSON ****** //
+	$.ajax({
+		url: "data/songs2.json"
+	}).done(function(contentsOfTheFile) {
+		console.log("the contents of songs2.json");
+	    console.log(contentsOfTheFile.songs2);
 
+		// ********* LOAD MORE SONGS FROM SONGS2.JSON ****** //    
+		contentsOfTheFile.songs2.forEach(appendSongs);
 
+	    // $(document).on("click", "#moreButton", 
 	});
-
-	
 
 });
 
