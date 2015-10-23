@@ -19,6 +19,10 @@ $(document).ready(function() {
 		$("#list-music").removeClass("visible");
 	});
 
+
+
+
+// ********* AJAX .DONE ****** //
     $.ajax({
 	    url: "data/songs.json"
     }).done(function(contentsOfTheFile) {
@@ -28,10 +32,22 @@ $(document).ready(function() {
     // the contents of the file as the first argument.
 	    console.log("the contents of songs.json");
 	    console.log(contentsOfTheFile.songs);
+
+// ********* ADD SONG FUNCTIONALITY ****** //	    
 	    contentsOfTheFile.songs.forEach(function(song) {
-		    $("#list-of-songs").append("<div> <h1>" + song.title + "</h1> <span>" + song.artist + "</span> <span class='center'>" + song.album + "</span> <span>" + song.genre + "</span> </div>");
+		    $("#list-of-songs").append("<div> <h1>" + song.title + "</h1> <span>" + song.artist + "</span> <span class='center'>" + song.album + "</span> <span>" + song.genre + "</span> <button class='deleteButton'>Delete</button> </div>");
 		});
+
+// ********* DELETE SONG FUNCTIONALITY ****** //
+		$(".deleteButton").click(function() {
+			$(this).parent().remove();
 	});
+
+
+
+	});
+
+	
 
 });
 
