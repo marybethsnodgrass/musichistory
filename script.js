@@ -1,9 +1,5 @@
 $(document).ready(function() {
 
-	// var listLink = $("#list-music-link");
-	// var listView = $("#list-music");
-	// var addMusicLink = $("#add-music-link");
-	// var addMusicView = $("#add-music");
 
 // ******* navigation links *******//
 	$("#list-music-link").click(function() {
@@ -21,31 +17,21 @@ $(document).ready(function() {
 
 		$("#list-music").addClass("hidden");
 		$("#list-music").removeClass("visible");
-	})
+	});
 
-// ***** add music functionality *****//
-	// $("#addButton").click(function() {
-
-
-	})
-
+    $.ajax({
+	    url: "data/songs.json"
+    }).done(function(contentsOfTheFile) {
+    // When you tell jQuery to read a file via the ajax method
+    // it reads the contents, and then executes whatever function
+    // that you specify here in the done() method, and passes in
+    // the contents of the file as the first argument.
+	    console.log("the contents of songs.json");
+	    console.log(contentsOfTheFile.songs);
+	    contentsOfTheFile.songs.forEach(function(song) {
+		    $("#list-of-songs").append("<div> <h1>" + song.title + "</h1> <span>" + song.artist + "</span> <span class='center'>" + song.album + "</span> <span>" + song.genre + "</span> </div>");
+		});
+	});
 
 });
 
-
-// var songs = [];
-
-// songs[songs.length] = "Legs > by Z*ZTop on the album Eliminator";
-// songs[songs.length] = "The Logical Song > by Supertr@amp on the album Breakfast in America";
-// songs[songs.length] = "Another Brick in the Wall > by Pink Floyd on the album The Wall";
-// songs[songs.length] = "Welco(me to the Jungle > by Guns & Roses on the album Appetite for Destruction";
-// songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little Pill";
-
-// songs[songs.length] = "Slide > by Goo Goo Dolls on the album Dizzy Up the Girl"
-// songs.unshift = "Kerosene > by Miranda Lambert on the album Kerosene"
-
-// $("#songs")
-// var song0text = song0element.innerHTML;
-
-// song0text = songs[0];
-// song0element.innerHTML = song0text;

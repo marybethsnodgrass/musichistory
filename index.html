@@ -23,11 +23,11 @@
   <!--  add music view -->
     <div id="add-music" class="hidden">
       <div id="add-music-content"> 
-        Song <input type="text">
-        Artist <input type="text">
-        Album <input type="text">
+        Song <input type="text" id="songInput">
+        Artist <input type="text" id="artistInput">
+        Album <input type="text" id="albumInput">
         <div id="addButton-div">
-          <input type="submit" id="addButton" value="Add">
+          <input type="submit" id="addButton" value="Add" id="addButton">
         </div>  
       </div>
     </div>
@@ -63,64 +63,8 @@
         </form>
       </div>
       <div id="results">
-        <section>
-          <div><h1>Kerosene</h1>
-            <span>
-              Miranda Lambert
-            <span>
-
-            <span class="center">
-              Kerosene
-            </span>
-
-            <span>
-              Country
-            </span>
-          </div>
-
-          <div><h1>Slide</h1>
-            <span>
-              Goo Goo Dolls
-            </span>
-
-            <span class="center">
-              Dizzy Up the Girl
-            </span>
-
-            <span>
-              Rock
-            </span>
-
-          </div>
-
-          <div><h1>Vertigo</h1>
-            <span>
-              U2
-            </span>
-
-            <span class="center">
-              How to Dismantle an Atomic Bomb
-            </span>
-
-            <span>
-            Rock
-            </span>
-
-          </div>
-
-          <div><h1>Bad Girls</h1>
-            <span>
-              M.I.A.
-            </span>
-
-            <span class="center">
-              Matangi
-            </span>
-
-            <span>
-              Hip-Hop
-            </span>
-          </div>
+        <section id="list-of-songs">
+        
         </section>
       </div>
     </div>
