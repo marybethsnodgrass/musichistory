@@ -7,19 +7,17 @@ define(["jquery"], function($) {
 	$(document).on("click", ".deleteButton", deleteSong);
 
 	// ********* append songs function ****** //
-	var appendSongs = function(song) {
-	    $("#list-of-songs").append("<div> <h1>" + song.title + "</h1> <span>" + song.artist + "</span> <span class='center'>" + song.album + "</span> <span>" + song.genre + "</span> <button class='deleteButton'>Delete</button> </div>");
+	var appendSongsJSON = function(song) {
+	    $("#list-of-songs").append("<div> <h1>" + song.title + "</h1> <span class='center'>" + song.artist + "</span> <span class='center'>" + song.album + "</span> <span>" + song.genre + "</span> <button class='deleteButton'>Delete</button> </div>");
 	};
 
 	// ******* More button functionality ********* //
 	$(document).on("click", "#moreButton", function () {
 		$.getJSON("data/songs2.json", function (song) {
 			console.log('working', song);
-		    song.songs2.forEach(appendSongs);
+		    song.songs2.forEach(appendSongsJSON);
 		});
 	});
-
-
 
 	 // ********* AJAX ON SONGS2.JSON ****** //
 	$.ajax({
@@ -28,10 +26,6 @@ define(["jquery"], function($) {
 		console.log("the contents of songs2.json");
 	    console.log(contentsOfTheFile.songs2);
 
-		// // ********* LOAD MORE SONGS FROM SONGS2.JSON ****** //    
-		// contentsOfTheFile.songs2.forEach(appendSongs);
-
-	 //    // $(document).on("click", "#moreButton", 
 	});
 
 });
