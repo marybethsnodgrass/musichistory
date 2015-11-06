@@ -1,12 +1,17 @@
 requirejs.config({
-	baseURL: "./javascripts",
-	paths: {
-		"jquery" : "../lib/bower_components/jquery/dist/jquery.min"
+	baseUrl : "./javascripts",
+	paths : {
+		"jquery" : "../lib/bower_components/jquery/dist/jquery.min",
+		"bootstrap" : "../lib/bower_components/bootstrap/dist/js/bootstrap.min.js"
+	},
+	shim: {
+		"bootstrap": ["jquery"]
 	}
 });
 
 //linking dependencies
 require(
-	["app", "populate-songs", "get-more-songs"],
-	function(app, populate_songs, get_more_songs) {
-});
+	["bootstrap", "app"],
+	function(bootstrap, app){
+	}
+);
