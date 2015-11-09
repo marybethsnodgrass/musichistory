@@ -29,11 +29,15 @@ define(["jquery", "populate-songs", "get-more-songs"], function($, populate_song
 	
 	// *******m add new data to filter options  ********* //
 	var artistArray = [];
-	var albumsArray = [];
+	var albumArray = [];
 
-	function addDataToFilter() {
-    	var elementString = "<option>" + artistArray[artistArray.length - 1] + "</option>";
-	    $("#artist-select").append(elementString);
+	function addArtistToFilter() {
+    	var artistElementString = "<option>" + artistArray[artistArray.length - 1] + "</option>";
+	    $("#artist-select").append(artistElementString);
+	}
+	function addAlbumToFilter() {
+    	var albumElementString = "<option>" + albumArray[albumArray.length - 1] + "</option>";
+	    $("#album-select").append(albumElementString);
 	}
 
 	
@@ -48,9 +52,12 @@ define(["jquery", "populate-songs", "get-more-songs"], function($, populate_song
 		    $("#list-of-songs").append(elementString);
 		    if (artistArray.indexOf(currentSong.artist) === -1) {
 		    	artistArray.push(currentSong.artist);
-		    	addDataToFilter();
+		    	addArtistToFilter();
+		    } 
+		    if (albumArray.indexOf(currentSong.album) === -1) {
+		    	albumArray.push(currentSong.album);
+		    	addAlbumToFilter();
 		    }
-		    console.log(artistArray);
 		}
 	}
 		// *******m populate my songs  ********* //
@@ -71,7 +78,11 @@ define(["jquery", "populate-songs", "get-more-songs"], function($, populate_song
 	    $("#list-of-songs").append(elementString);
 	    if (artistArray.indexOf($("#artistInput").val()) === -1) {
 	    	artistArray.push($("#artistInput").val());
-	    	addDataToFilter();
+	    	addArtistToFilter();
+	    }
+	    if (albumArray.indexOf($("#albumInput").val()) === -1) {
+	    	albumArray.push($("#albumInput").val());
+	    	addAlbumToFilter();
 	    }
 	}
 
