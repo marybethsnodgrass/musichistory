@@ -1,0 +1,40 @@
+{
+  "songs": {
+    "kerosene": {
+      "title": "Kerosene",
+      "artist": "Miranda Lambert",
+      "album": "Kerosene",
+      "genre": "Country"
+    },
+    "slide": {
+      "title": "Slide",
+      "artist": "Goo Goo Dolls",
+      "album": "Dizzy up the Girl",
+      "genre": "Rock"
+    },
+    "vertigo": {
+      "title": "Vertigo",
+      "artist": "U2",
+      "album": "How to Dismantle an Atomic Bomb",
+      "genre": "Rock"
+    },
+    "favMistake": {
+      "title": "My Favorite Mistake",
+      "artist": "Sheryl Crow",
+      "album": "The Globe Sessions",
+      "genre": "Rock"
+    },
+    "longWay": {
+      "title": "Taking the Long Way",
+      "artist": "Dixie Chicks",
+      "album": "Taking the Long Way",
+      "genre": "Country"
+    },
+    "fiddlin": {
+      "title": "Fiddlin' Around",
+      "artist": "Dierks Bentley",
+      "album": "Up on the Ridge",
+      "genre": "Country"
+    }
+  }
+}

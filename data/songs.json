@@ -9,14 +9,14 @@
     {
       "title": "Slide",
       "artist": "Goo Goo Dolls",
-      "album": "Dizzy up the Girl", 
-      "genre": "Rock"     
-    },    
+      "album": "Dizzy up the Girl",
+      "genre": "Rock"
+    },
     {
       "title": "Vertigo",
       "artist": "U2",
       "album": "How to Dismantle an Atomic Bomb",
-      "genre": "Rock"    
+      "genre": "Rock"
     }
   ]
 }

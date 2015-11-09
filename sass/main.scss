@@ -1,7 +1,126 @@
-$font-stack:    Helvetica, sans-serif;
-$primary-color: #333;
+/********** General **************/
 
-body {
-  font: 100% $font-stack;
-  color: $primary-color;
+.center {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+
+html{
+  width: 90%;
+  margin: auto;
+}
+
+.hidden {
+  display:none;
+}
+
+.visible {
+  display:block;
+}
+
+/********** HEADER **************/
+
+header {
+  background-color: #FFB4B0;
+  padding: 15px;
+  display: block;
+}
+
+/********** ADD-MUSIC **************/
+
+#add-music-content {
+  border: 2px solid black;
+  padding: 25px;
+  color: black;
+}
+
+#addButton-div {
+  margin: 15px 0 0 0;
+  text-align: center;
+}
+
+/********** LIST-MUSIC **************/
+
+#list-music {
+  margin: auto;
+
+}
+header div {
+  display:inline-block;
+  padding: 0px 20px;
+}
+
+/*Search div */
+#search {
+  background-color: #4DD7FA;
+  padding: 0px 25px;
+}
+
+label {
+  display: block;
+  padding-top: 20px;
+
+}
+form {
+  margin: 20px 0px;
+}
+
+.button {
+  border: 2px solid black;
+  margin:auto;
+  margin-top: 5px;
+}
+
+div input {
+  display: block;
+}
+
+#column1 {
+  display: inline-block;
+  // padding-right: 25px;
+  width: 50%;
+  // margin-left: 15%;
+}
+
+#column2 {
+  display: inline-block;
+}
+
+#song-filter label, #song-filter select {
+  margin: 4px 0 7px 0;
+  padding-top: 10px;
+}
+
+#song-filter select, #song-filter label, #filter-div {
+  display: block;
+}
+
+#filter-div {
+  padding-top: 15px;
+}
+
+#filterButton {
+  margin: auto;
+}
+
+/*Results Div*/
+
+section div:nth-child(2n) {
+  background-color: #FFF5EE;
+}
+
+section div:nth-child(2n+1) {
+  background-color: #F5FFFA;
+}
+
+section div:first-child {
+  font-weight: bold;
+}
+
+#results {
+  background-color: #FEFAC0;
+}
+
+span {
+    padding: 0px 15px;
 }

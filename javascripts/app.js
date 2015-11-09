@@ -18,15 +18,6 @@ define(["jquery", "populate-songs", "get-more-songs"], function($, populate_song
 		$("#list-music").removeClass("visible");
 	});
 
-	// ******* view after add song button clicked *******//	
-	$("#addButton").click(function() {
-		$("#list-music").addClass("visible");
-		$("#list-music").removeClass("hidden");
-
-		$("#add-music").addClass("hidden");
-		$("#add-music").removeClass("visible");
-	});
-
 	// ********* delete song function****** //
 	var deleteSong = function() {
 		$(this).parent().remove();
@@ -34,30 +25,65 @@ define(["jquery", "populate-songs", "get-more-songs"], function($, populate_song
 	$(document).on("click", ".deleteButton", deleteSong);
 
 
-	// ********* append songs function ****** //
-	var appendSongsJSON = function(songList) {
+// ********* append songs function (and add title, artist, album option to filter options) ****** //
+	
+	// *******m add new data to filter options  ********* //
+	var artistArray = [];
+	var albumsArray = [];
+
+	function addDataToFilter() {
+    	var elementString = "<option>" + artistArray[artistArray.length - 1] + "</option>";
+	    $("#artist-select").append(elementString);
+	}
+
+	
+	// *******m functions to populate songs from JSON files ********* //
+	function appendSongsJSON(songList) {
 	    for (var i = 0; i < songList.songs.length; i++) {
 	    	var currentSong = songList.songs[i];
-	    	console.log("current song is ", currentSong);
-	    		var elementString = "<div> <h1>" + currentSong.title + "</h1>";
-	    		elementString += "<span>" + currentSong.artist + "</span>";
-	    		elementString += "<span class='center'>" + currentSong.album + "</span>";
-	    		elementString += "<span>" + currentSong.genre + "</span> <button class='deleteButton'>Delete</button> </div>";
-	    $("#list-of-songs").append(elementString);
+    		var elementString = "<div> <h1>" + currentSong.title + "</h1>";
+    		elementString += "<span>" + currentSong.artist + "</span>";
+    		elementString += "<span class='center'>" + currentSong.album + "</span>";
+    		elementString += "<span>" + currentSong.genre + "</span> <button class='deleteButton'>Delete</button> </div>";
+		    $("#list-of-songs").append(elementString);
+		    if (artistArray.indexOf(currentSong.artist) === -1) {
+		    	artistArray.push(currentSong.artist);
+		    	addDataToFilter();
+		    }
+		    console.log(artistArray);
+		}
 	}
-	};
-
-	// *******m populate my songs  ********* //
+		// *******m populate my songs  ********* //
 	populate_songs.getSongs(appendSongsJSON);
 
-	// *******m more button functionality ********* //
+		// *******m more button ********* //
 
 	$("#moreButton").click(function() {
 		get_more_songs.getSongs(appendSongsJSON);
 	});
-	// *******m Add Song  ********* //
+
+	// *******m functions to add a songs ********* //
+	function appendAddSong(songList) {
+    	var elementString = "<div> <h1>" + $("#songInput").val()+ "</h1>";
+		elementString += "<span>" + $("#artistInput").val() + "</span>";
+		elementString += "<span class='center'>" + $("#albumInput").val()+ "</span>";
+		elementString += "<span>" + $("#genreInput").val() + "</span> <button class='deleteButton'>Delete</button> </div>";
+	    $("#list-of-songs").append(elementString);
+	    if (artistArray.indexOf($("#artistInput").val()) === -1) {
+	    	artistArray.push($("#artistInput").val());
+	    	addDataToFilter();
+	    }
+	}
+
 	
-	$(document).on("click", "#addButton", function () {
-		$("#list-of-songs").append("<div> <h1>" + $("#songInput").val() + "</h1> <span>" + $("#artistInput").val()  + "</span> <span class='center'>" + $("#albumInput").val() + "</span> <span>" + $("genreInput").val() + "</span> <button class='deleteButton'>Delete</button> </div>");
+	$("#addButton").click(function() {
+		appendAddSong();
+	// ******* view after add song button clicked *******//	
+		$("#list-music").addClass("visible");
+		$("#list-music").removeClass("hidden");
+
+		$("#add-music").addClass("hidden");
+		$("#add-music").removeClass("visible");
 	});
+
 });
