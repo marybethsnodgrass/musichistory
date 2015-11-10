@@ -1,4 +1,4 @@
-define(["jquery", "populate-songs", "get-more-songs"], function($, populate_songs, get_more_songs) {
+define(["jquery", "populate-songs"], function($, populate_songs) {
 // ******* navigation links *******//
 	// ******* home view *******//
 	$("#list-music-link").click(function() {
@@ -19,9 +19,9 @@ define(["jquery", "populate-songs", "get-more-songs"], function($, populate_song
 	});
 
 	// ********* delete song function****** //
-	var deleteSong = function() {
+	function deleteSong() {
 		$(this).parent().remove();
-	};
+	}
 	$(document).on("click", ".deleteButton", deleteSong);
 
 
@@ -40,6 +40,15 @@ define(["jquery", "populate-songs", "get-more-songs"], function($, populate_song
 	    $("#album-select").append(albumElementString);
 	}
 
+	// *******m filter/sort functionality ********* //
+	// $("#artist-select").change(function() {
+	// 	var str = "";
+ //   		$( "select option:selected" ).each(function() {
+ //      		str += $( this ).text() + " ";
+ //   		});
+ //   		$( "div" ).text( str );
+ //  })
+ //  .change();
 	
 	// *******m functions to populate songs from JSON files ********* //
 	function appendSongsJSON(songList) {
@@ -62,12 +71,6 @@ define(["jquery", "populate-songs", "get-more-songs"], function($, populate_song
 	}
 		// *******m populate my songs  ********* //
 	populate_songs.getSongs(appendSongsJSON);
-
-		// *******m more button ********* //
-
-	$("#moreButton").click(function() {
-		get_more_songs.getSongs(appendSongsJSON);
-	});
 
 	// *******m functions to add a songs ********* //
 	function appendAddSong(songList) {

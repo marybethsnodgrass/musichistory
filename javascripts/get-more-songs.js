@@ -3,7 +3,7 @@ define(["jquery"], function($) {
     return {
 		getSongs: function(callbackFunction) {
 		    $.ajax({
-			    url: "data/songs2.json"
+			    url: "https://burning-torch-430.firebaseio.com/.json"
 			}).done(callbackFunction);
 		}
 	};

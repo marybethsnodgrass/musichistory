@@ -1,21 +1,10 @@
 define(["jquery"], function($) {
-
-	// ********* AJAX ON SONGS.JSON ****** //
+	// ********* AJAX ON SONGSFIRE.JSON ****** //
     return {
-    	getSongs: function(callback) {
+		getSongs: function(callbackFunction) {
 		    $.ajax({
-		    	url: "data/songs.json"
-			    // url: "https://burning-torch-430.firebaseio.com/.json"
-		    }).done(callback);
+			    url: "data/songs.json"
+			}).done(callbackFunction);
 		}
-
 	};
-
-	// $ajax({
-	// 	url: "https://burning-torch-430.firebaseio.com/songs.json";
-	// 	method: "POST";
-	// 	data: JSON.stringify(newSong)
-	// }).done(function(addedSong))
-
-
 });
