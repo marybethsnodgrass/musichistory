@@ -1,4 +1,4 @@
-define(["jquery", "populate-songs"], function($, populate_songs) {
+define(["jquery", "populate-songs", "loadSongs"], function($, populate_songs, loadSongs) {
 // ******* navigation links *******//
 	// ******* home view *******//
 	$("#list-music-link").click(function() {
@@ -51,14 +51,9 @@ define(["jquery", "populate-songs"], function($, populate_songs) {
  //  .change();
 	
 	// *******m functions to populate songs from JSON files ********* //
+
+
 	function appendSongsJSON(songList) {
-	    for (var i = 0; i < songList.songs.length; i++) {
-	    	var currentSong = songList.songs[i];
-    		var elementString = "<div> <h1>" + currentSong.title + "</h1>";
-    		elementString += "<span>" + currentSong.artist + "</span>";
-    		elementString += "<span class='center'>" + currentSong.album + "</span>";
-    		elementString += "<span>" + currentSong.genre + "</span> <button class='deleteButton'>Delete</button> </div>";
-		    $("#list-of-songs").append(elementString);
 		    if (artistArray.indexOf(currentSong.artist) === -1) {
 		    	artistArray.push(currentSong.artist);
 		    	addArtistToFilter();
@@ -68,9 +63,9 @@ define(["jquery", "populate-songs"], function($, populate_songs) {
 		    	addAlbumToFilter();
 		    }
 		}
-	}
+
 		// *******m populate my songs  ********* //
-	populate_songs.getSongs(appendSongsJSON);
+	populate_songs.getSongs(loadSongs.insertSongstoDOM);
 
 	// *******m functions to add a songs ********* //
 	function appendAddSong(songList) {

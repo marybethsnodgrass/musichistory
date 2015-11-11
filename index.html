@@ -48,10 +48,13 @@
             <form action="#" method="POST" id="song-filter">
               <label for="length">Song length:</label>
                 <input type="range" name="length" min="1" max="6" step=".5">
-              <label for="artist-select">Artist:</label>
+              <label for="artist-select">
+              Artist:</label>
                 <select id="artist-select" name="artist-select">
+                  <option id="artistOptions"> </option>
                 </select>
-              <label for="album-select">Album:</label>
+              <label for="album-select">
+              Album:</label>
                 <select id="album-select" name="album-select">
                   <option id="albumOptions"> </option>
                 </select>
@@ -76,9 +79,8 @@
           
           <!--  Song List/Results box--> 
           <div id="results" class="col-sm-8">
-            <section id="list-of-songs">      
-            </section>
-            <button id="moreButton">'More>'</button>
+            <section id="list-of-songs">
+            </section> 
           </div> <!-- this is the closing div to #results-->
         </div> <!-- this is the closing div to #row-->
       </div> <!-- this is the closing div to #listMusic -->
@@ -86,3 +88,7 @@
     <script data-main="javascripts/entry" src="lib/bower_components/requirejs/require.js"></script>
   </body>
 </html>
+
+
+
+
