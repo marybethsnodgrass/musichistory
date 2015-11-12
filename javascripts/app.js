@@ -69,11 +69,6 @@ define(["jquery", "populate-songs", "loadSongs"], function($, populate_songs, lo
 
 	// *******m functions to add a songs ********* //
 	function appendAddSong(songList) {
-    	var elementString = "<div> <h1>" + $("#songInput").val()+ "</h1>";
-		elementString += "<span>" + $("#artistInput").val() + "</span>";
-		elementString += "<span class='center'>" + $("#albumInput").val()+ "</span>";
-		elementString += "<span>" + $("#genreInput").val() + "</span> <button class='deleteButton'>Delete</button> </div>";
-	    $("#list-of-songs").append(elementString);
 	    if (artistArray.indexOf($("#artistInput").val()) === -1) {
 	    	artistArray.push($("#artistInput").val());
 	    	addArtistToFilter();
@@ -83,16 +78,5 @@ define(["jquery", "populate-songs", "loadSongs"], function($, populate_songs, lo
 	    	addAlbumToFilter();
 	    }
 	}
-
-	
-	$("#addButton").click(function() {
-		appendAddSong();
-	// ******* view after add song button clicked *******//	
-		$("#list-music").addClass("visible");
-		$("#list-music").removeClass("hidden");
-
-		$("#add-music").addClass("hidden");
-		$("#add-music").removeClass("visible");
-	});
 
 });
