@@ -18,27 +18,23 @@ define(["jquery", "populate-songs", "loadSongs"], function($, populate_songs, lo
 		$("#list-music").removeClass("visible");
 	});
 
-	// ********* delete song function****** //
-	function deleteSong() {
-		$(this).parent().remove();
-	}
-	$(document).on("click", ".deleteButton", deleteSong);
-
-
 // ********* append songs function (and add title, artist, album option to filter options) ****** //
 	
-	// *******m add new data to filter options  ********* //
-	var artistArray = [];
-	var albumArray = [];
+	// *******m populate my songs  ********* //
+	populate_songs.getSongs(loadSongs.insertSongstoDOM);
 
-	function addArtistToFilter() {
-    	var artistElementString = "<option>" + artistArray[artistArray.length - 1] + "</option>";
-	    $("#artist-select").append(artistElementString);
-	}
-	function addAlbumToFilter() {
-    	var albumElementString = "<option>" + albumArray[albumArray.length - 1] + "</option>";
-	    $("#album-select").append(albumElementString);
-	}
+	// *******m add new data to filter options  ********* //
+	// var artistArray = [];
+	// var albumArray = [];
+
+	// function addArtistToFilter() {
+ //    	var artistElementString = "<option>" + artistArray[artistArray.length - 1] + "</option>";
+	//     $("#artist-select").append(artistElementString);
+	// }
+	// function addAlbumToFilter() {
+ //    	var albumElementString = "<option>" + albumArray[albumArray.length - 1] + "</option>";
+	//     $("#album-select").append(albumElementString);
+	// }
 
 	// *******m filter/sort functionality ********* //
 	// $("#artist-select").change(function() {
@@ -53,30 +49,33 @@ define(["jquery", "populate-songs", "loadSongs"], function($, populate_songs, lo
 	// *******m functions to populate songs from JSON files ********* //
 
 
-	function appendSongsJSON(songList) {
-		    if (artistArray.indexOf(currentSong.artist) === -1) {
-		    	artistArray.push(currentSong.artist);
-		    	addArtistToFilter();
-		    } 
-		    if (albumArray.indexOf(currentSong.album) === -1) {
-		    	albumArray.push(currentSong.album);
-		    	addAlbumToFilter();
-		    }
-		}
+	// function appendSongsJSON(songList) {
+	// 	    if (artistArray.indexOf(currentSong.artist) === -1) {
+	// 	    	artistArray.push(currentSong.artist);
+	// 	    	addArtistToFilter();
+	// 	    } 
+	// 	    if (albumArray.indexOf(currentSong.album) === -1) {
+	// 	    	albumArray.push(currentSong.album);
+	// 	    	addAlbumToFilter();
+	// 	    }
+	// 	}
 
-		// *******m populate my songs  ********* //
-	populate_songs.getSongs(loadSongs.insertSongstoDOM);
 
 	// *******m functions to add a songs ********* //
-	function appendAddSong(songList) {
-	    if (artistArray.indexOf($("#artistInput").val()) === -1) {
-	    	artistArray.push($("#artistInput").val());
-	    	addArtistToFilter();
-	    }
-	    if (albumArray.indexOf($("#albumInput").val()) === -1) {
-	    	albumArray.push($("#albumInput").val());
-	    	addAlbumToFilter();
-	    }
-	}
+	// function appendAddSong(songList) {
+ //    	var elementString = "<div> <h1>" + $("#songInput").val()+ "</h1>";
+	// 	elementString += "<span>" + $("#artistInput").val() + "</span>";
+	// 	elementString += "<span class='center'>" + $("#albumInput").val()+ "</span>";
+	// 	elementString += "<span>" + $("#genreInput").val() + "</span> <button class='deleteButton'>Delete</button> </div>";
+	//     $("#list-of-songs").append(elementString);
+	//     if (artistArray.indexOf($("#artistInput").val()) === -1) {
+	//     	artistArray.push($("#artistInput").val());
+	//     	addArtistToFilter();
+	//     }
+	//     if (albumArray.indexOf($("#albumInput").val()) === -1) {
+	//     	albumArray.push($("#albumInput").val());
+	//     	addAlbumToFilter();
+	//     }
+	// }
 
 });
