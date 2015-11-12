@@ -17,3 +17,5 @@ define(["jquery"], function($) {
   });
 
 });
+
+// ********** working, except for page has to refresh for song to go away. however, song dissapears on firebase without having to refresh page"

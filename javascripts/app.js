@@ -22,6 +22,7 @@ define(["jquery", "populate-songs", "loadSongs"], function($, populate_songs, lo
 	
 	// *******m populate my songs  ********* //
 	populate_songs.getSongs(loadSongs.insertSongstoDOM);
+	// populate_songs.getSongs(filterOptions.insertFilterOptions);
 
 	// *******m add new data to filter options  ********* //
 	// var artistArray = [];
