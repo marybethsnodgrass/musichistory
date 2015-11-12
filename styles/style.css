@@ -84,9 +84,6 @@ section div:nth-child(2n) {
 section div:nth-child(2n+1) {
   background-color: #F5FFFA; }
 
-section div:first-child {
-  font-weight: bold; }
-
 #results {
   background-color: #FEFAC0; }
 
