@@ -1,5 +1,9 @@
 define(["jquery", "hbs/handlebars"], function ($, hbs) {
 		// console.log("load-songs is working!");
+	var moduleSongsObject;
+	var filteredSongs = {
+    	songs: {}
+    };
 
 	return {
 		insertSongstoDOM: function(songData) {
@@ -39,16 +43,4 @@ define(["jquery", "hbs/handlebars"], function ($, hbs) {
 	};
 });
 
-// *******m add new data to filter options  ********* //
-
-
-	// *******m filter/sort functionality ********* //
-	// $("#artist-select").change(function() {
-	// 	var str = "";
- //   		$( "select option:selected" ).each(function() {
- //      		str += $( this ).text() + " ";
- //   		});
- //   		$( "div" ).text( str );
- //  })
- //  .change();
 	

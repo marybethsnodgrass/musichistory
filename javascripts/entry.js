@@ -3,7 +3,9 @@ requirejs.config({
 	paths : {
 		"jquery" : "../lib/bower_components/jquery/dist/jquery.min",
 		"hbs" : "../lib/bower_components/require-handlebars-plugin/hbs",
-		"bootstrap" : "../lib/bower_components/bootstrap/dist/js/bootstrap.min"
+		"bootstrap" : "../lib/bower_components/bootstrap/dist/js/bootstrap.min",
+		"q": "../bower_components/q/q",
+		"firebase" : "../lib/bower_components/firebase/firebase"
 	},
 	shim: {
 		"bootstrap": ["jquery"]
@@ -11,8 +13,8 @@ requirejs.config({
 });
 
 //linking dependencies
-require(
-	["bootstrap", "hbs", "app", "addSong", "deleteSong"],
-	function(bootstrap, handlebars, app, addSong, deleteSong){
+requirejs(
+	["bootstrap", "hbs", "app", "addSong", "deleteSong", "eventListeners"],
+	function(bootstrap, handlebars, app, addSong, deleteSong, eventListeners){
 	}
 );
