@@ -1,4 +1,4 @@
-define(["jquery", "populate-songs", "loadSongs"], function($, populate_songs, loadSongs) {
+define(["jquery", "populate-songs", "loadSongs", "filterAlbums", "filterArtists"], function($, populate_songs, loadSongs, filter_Albums, filter_Artists) {
 // ******* navigation links *******//
 	// ******* home view *******//
 	$("#list-music-link").click(function() {
@@ -20,5 +20,8 @@ define(["jquery", "populate-songs", "loadSongs"], function($, populate_songs, lo
 	
 	// *******m populate my songs  ********* //
 	populate_songs.getSongs(loadSongs.insertSongstoDOM);
+
+	$("#artist-select").change(filter_Artists.filterArtists);
+	$("#album-select").change(filter_Albums.filterAlbums);
 
 });
