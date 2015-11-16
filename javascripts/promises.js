@@ -1,6 +1,6 @@
 requirejs(
-  ["jquery", "hbs", "bootstrap", "loadSongs", "addSong"], 
-  function($, Handlebars, bootstrap, loadSongs, addSong) {
+  ["jquery", "hbs", "bootstrap", "loadSongs", "addSong", "populate-songs", "newSong"], 
+  function($, Handlebars, bootstrap, loadSongs, addSong, populate_songs, clearOldSongList) {
 
     var newTitle = $("#titleInput");
     var newArtist = $("#artistInput");
@@ -9,11 +9,7 @@ requirejs(
     var newSong = {};
 
     $("#addButton").click(function(e){
-        $("#list-music").addClass("visible");
-        $("#list-music").removeClass("hidden");
-
-        $("#add-music").addClass("hidden");
-        $("#add-music").removeClass("visible");
+        
 
         newSong = {
              "title": newTitle.val(),
@@ -24,7 +20,17 @@ requirejs(
 
         addSong.postSong(newSong)
             .then(function() {
-                loadSongs.insertSongstoDOM(newSong);
+                clearOldSongList.clearOldSongs();
+            })
+            .then(function() {
+                populate_songs.getSongs(loadSongs.insertSongstoDOM);
+            })
+            .then(function() {
+                $("#list-music").addClass("visible");
+                $("#list-music").removeClass("hidden");
+
+                $("#add-music").addClass("hidden");
+                $("#add-music").removeClass("visible");
             })
             .then(function() {
             //resetting fields to be empty
