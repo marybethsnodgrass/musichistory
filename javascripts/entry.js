@@ -15,7 +15,7 @@ requirejs.config({
 
 //linking dependencies
 requirejs(
-	["bootstrap", "hbs", "app", "addSong", "deleteSong"],
-	function(bootstrap, handlebars, app, addSong, deleteSong){
+	["bootstrap", "hbs", "app", "addSong", "deleteSong", "promises"],
+	function(bootstrap, handlebars, app, addSong, deleteSong, promises){
 	}
 );

@@ -3,46 +3,31 @@ define(function(require) {
 	var Q = require("q");
 	var $ = require("jquery");
 	var loadSongs = require("loadSongs");
+	var promises = require("promises");
+	var deferred = Q.defer();
 
-	return function() {
-	    var deferred = Q.defer();
+	return {
+		postSong: function(newSong) {
+		    $.ajax({
+		         url: "https://burning-torch-430.firebaseio.com/songs.json",
+		         method: "POST", 
+		         data: JSON.stringify(newSong)
+	        })
 
-		var newTitle = $("#titleInput");
-		var newArtist = $("#artistInput");
-		var newAlbum = $("#albumInput");
-		var newGenre = $("#genreInput");
+	        .done(function(addedSong) {
+	        	console.log("it's done");
+		      	deferred.resolve(addedSong);
+		    })
 
-		$("#addButton").click(function(e){
+		    .fail(function(xhr, status, error) {
+	        	deferred.reject(error);
+	        });
 
-			var newSong = {
-			   "title": newTitle.val(),
-			   "artist": newArtist.val(),
-			   "album": newAlbum.val(),
-			   "genre": newGenre.val()
-			 };
-
-			console.log("working", newSong);	
-
-			$.ajax({
-			   url: "https://burning-torch-430.firebaseio.com/songs.json",
-			   method: "POST", 
-			   data: JSON.stringify(newSong)
-			}).done(function(addedSong) {
-			   console.log("Your new song is", addedSong);
-			   loadSongs.insertSongstoDOM(newSong);
-			});
-
-			//resetting fields to be empty
-			newTitle.val("");
-			newArtist.val("");
-			newAlbum.val("");
-			newGenre.val("");
-
-			$("#list-music").addClass("visible");
-			$("#list-music").removeClass("hidden");
-
-			$("#add-music").addClass("hidden");
-			$("#add-music").removeClass("visible");
-		});
-	}
+		    return deferred.promise;
+		}
+	};	
 });
+
+
+	         
+
