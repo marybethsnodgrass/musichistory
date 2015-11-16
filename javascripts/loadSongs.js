@@ -1,5 +1,9 @@
-define(["jquery", "hbs/handlebars"], function ($, hbs) {
-		// console.log("load-songs is working!");
+define(function(require) {
+//dependencies
+    var $ = require("jquery");
+    var hbs = require("hbs/handlebars");	
+
+//variables for function
 	var moduleSongsObject;
 	var filteredSongs = {
     	songs: {}

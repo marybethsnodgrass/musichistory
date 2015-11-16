@@ -1,7 +1,17 @@
-requirejs(
-  ["jquery", "hbs", "bootstrap", "loadSongs", "addSong", "populate-songs", "newSong"], 
-  function($, Handlebars, bootstrap, loadSongs, addSong, populate_songs, clearOldSongList) {
+define(function(require) {
+//dependencies
+    var _ = require("lodash");
+    var Q = require("q");
+    var $ = require("jquery");
+    var Handlebars = require("hbs");
+    var bootstrap = require("bootstrap");
+    var loadSongs = require("loadSongs");
+    var addSong = require("addSong");
+    var populateSongs = require("populateSongs");
+    var clearOldSongList = require("clearOldSongList");
+    var deferred = Q.defer();
 
+//variables for getting values from song input fields
     var newTitle = $("#titleInput");
     var newArtist = $("#artistInput");
     var newAlbum = $("#albumInput");
@@ -10,7 +20,6 @@ requirejs(
 
     $("#addButton").click(function(e){
         
-
         newSong = {
              "title": newTitle.val(),
              "artist": newArtist.val(),
@@ -23,7 +32,7 @@ requirejs(
                 clearOldSongList.clearOldSongs();
             })
             .then(function() {
-                populate_songs.getSongs(loadSongs.insertSongstoDOM);
+                populateSongs.getSongs(loadSongs.insertSongstoDOM);
             })
             .then(function() {
                 $("#list-music").addClass("visible");

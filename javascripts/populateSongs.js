@@ -1,4 +1,6 @@
-define(["jquery"], function($) {
+define(function(require) {
+//dependencies
+    var $ = require("jquery");
 	// ********* AJAX ON SONGSFIRE.JSON ****** //
     return {
 		getSongs: function(callbackFunction) {

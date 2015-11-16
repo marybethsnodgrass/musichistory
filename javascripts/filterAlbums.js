@@ -1,5 +1,9 @@
-define(["jquery", "loadSongs"], function ($, loadSongs) {
+define(function(require) {
+//dependencies
+    var $ = require("jquery");
+    var loadSongs = require("loadSongs");
 
+// variable for filtering songs	
 	var filteredSongs = {
     	songs: {}
     };

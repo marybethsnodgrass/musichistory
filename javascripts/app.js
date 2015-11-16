@@ -1,4 +1,15 @@
-define(["jquery", "populate-songs", "loadSongs", "filterAlbums", "filterArtists"], function($, populate_songs, loadSongs, filter_Albums, filter_Artists) {
+define(function(require) {
+//dependencies
+    var _ = require("lodash");
+    var Q = require("q");
+    var $ = require("jquery");
+    var Handlebars = require("hbs");
+    var bootstrap = require("bootstrap");
+    var loadSongs = require("loadSongs");
+    var filterAlbums = require("filterAlbums");
+    var populateSongs = require("populateSongs");
+    var filterArtists = require("filterArtists");
+
 // ******* navigation links *******//
 	// ******* home view *******//
 	$("#list-music-link").click(function() {
@@ -19,9 +30,9 @@ define(["jquery", "populate-songs", "loadSongs", "filterAlbums", "filterArtists"
 	});
 	
 	// *******m populate my songs  ********* //
-	populate_songs.getSongs(loadSongs.insertSongstoDOM);
+	populateSongs.getSongs(loadSongs.insertSongstoDOM);
 
-	$("#artist-select").change(filter_Artists.filterArtists);
-	$("#album-select").change(filter_Albums.filterAlbums);
+	$("#artist-select").change(filterArtists.filterArtists);
+	$("#album-select").change(filterAlbums.filterAlbums);
 
 });

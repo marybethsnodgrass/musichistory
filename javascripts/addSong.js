@@ -2,8 +2,6 @@ define(function(require) {
 	var _ = require("lodash");
 	var Q = require("q");
 	var $ = require("jquery");
-	var loadSongs = require("loadSongs");
-	var promises = require("promises");
 	var deferred = Q.defer();
 
 	return {
@@ -13,12 +11,10 @@ define(function(require) {
 		         method: "POST", 
 		         data: JSON.stringify(newSong)
 	        })
-
 	        .done(function(addedSong) {
 	        	console.log("it's done");
 		      	deferred.resolve(addedSong);
 		    })
-
 		    .fail(function(xhr, status, error) {
 	        	deferred.reject(error);
 	        });
