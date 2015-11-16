@@ -9,21 +9,36 @@ define(function(require) {
     var deleteSong = require("deleteSong");
     var populateSongs = require("populateSongs");
     var clearOldSongList = require("clearOldSongList");
+
     var songKey;
 //delete button promise    
     $(document).on("click", ".deleteButton", function(e) {
         songKey = $(this).attr("id");
         console.log("working", songKey);
-        deleteSong.removeSong(songKey)
-            .then(function() {
-                clearOldSongList.clearOldSongs();
-            })
-            .then(function() {
-                populateSongs.getSongs(loadSongs.insertSongstoDOM);
-            })
-            .fail(function(){
-                console.log("error");
-            });
+        $('#deleteModal').modal("toggle");
+
+        $("#cancelButton").click(function(e) {
+            $("#deleteModal").modal("toggle");
+        });
+
+        $('#modalDeleteButton').click(function(e) {
+            
+            console.log("working", songKey);
+
+            deleteSong.removeSong(songKey)
+                .then(function(e) {
+                    clearOldSongList.clearOldSongs();
+                })
+                .then(function(e) {
+                    $("#deleteModal").modal("toggle");
+                })
+                .then(function(e) {
+                    populateSongs.getSongs(loadSongs.insertSongstoDOM);
+                })
+                .fail(function(){
+                    console.log("error");
+                });
+        });
     });
 });
 
