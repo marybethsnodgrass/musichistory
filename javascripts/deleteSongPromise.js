@@ -12,35 +12,39 @@ define(function(require) {
 
     var songKey;
 //delete button promise    
-    $(document).on("click", ".deleteButton", function(e) {
-        songKey = $(this).attr("id");
-        console.log("working", songKey);
-        $('#deleteModal').modal("toggle");
 
-        $("#cancelButton").click(function(e) {
-            $("#deleteModal").modal("toggle");
-        });
-
-        $('#modalDeleteButton').click(function(e) {
-            
+    return {
+        deleteSong: function() { 
+            songKey = $(this).attr("id");
             console.log("working", songKey);
+            $('#deleteModal').modal("toggle");
 
-            deleteSong.removeSong(songKey)
-                .then(function(e) {
-                    clearOldSongList.clearOldSongs();
-                })
-                .then(function(e) {
-                    $("#deleteModal").modal("toggle");
-                })
-                .then(function(e) {
-                    populateSongs.getSongs(loadSongs.insertSongstoDOM);
-                })
-                .fail(function(){
-                    console.log("error");
-                });
-        });
-    });
+            $("#cancelButton").click(function(e) {
+                $("#deleteModal").modal("toggle");
+            });
+
+            $('#modalDeleteButton').click(function(e) {
+                
+                console.log("working", songKey);
+
+                deleteSong.removeSong(songKey)
+                    .then(function(e) {
+                        clearOldSongList.clearOldSongs();
+                    })
+                    .then(function(e) {
+                        $("#deleteModal").modal("toggle");
+                    })
+                    .then(function(e) {
+                        populateSongs.getSongs(loadSongs.insertSongstoDOM);
+                    })
+                    .fail(function(){
+                        console.log("error");
+                    });
+            });
+        }
+    };  
 });
+
 
 
   

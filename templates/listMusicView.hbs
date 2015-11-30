@@ -1,0 +1,32 @@
+<div id="search" class="border col-sm-4">
+  <form action="#" method="POST" id="song-filter">
+    <label for="length">Song length:</label>
+      <input type="range" name="length" min="1" max="6" step=".5">
+    <label for="artist-select">
+    Artist:</label>
+      <select id="artist-select" name="artist-select">
+        <option id="artistOptions"> </option>
+      </select>
+    <label for="album-select">
+    Album:</label>
+      <select id="album-select" name="album-select">
+        <option id="albumOptions"> </option>
+      </select>
+    <label for="genre-options">Genre:</label>
+      <div id="genreDiv">
+        <div id="column1">
+          <input type="checkbox" name="genre-options" value="rock"> Rock
+          <input type="checkbox" name="genre-options" value="pop"> Pop 
+          <input type="checkbox" name="genre-options" value="blues"> Blues
+        </div>
+        <div id="column2">
+          <input type="checkbox" name="genre-options" value="jlassical"> Classical
+          <input type="checkbox" name="genre-options" value="jazz"> Jazz
+          <input type="checkbox" name="genre-options" value="hip-hop"> Hip-hop
+        </div>
+    </div>
+    <div id="filter-div">
+      <input type="submit" id="filterButton" value="Filter">
+    </div>  <!-- this is the closing div to #filter-div--> 
+  </form>
+</div> <!-- this is the closing div to #search-->

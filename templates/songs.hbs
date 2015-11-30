@@ -1,11 +1,9 @@
 {{#each songs}}
-  <div class="oneSong"> 
-    <h1>{{title}}</h1>
-    <span>{{artist}}</span>
-    <span class='center'> {{album}}</span>
-    <span> {{genre}}</span> 
-    <button class='deleteButton btn btn-primary data-toggle="modal" data-target="#deleteModal" id='{{@key}}''>Delete</button> 
-  </div>
+ 	<div class="oneSong"> 
+	    <h1>{{title}}</h1>
+	    <span>{{artist}}</span>
+	    <span class='center'> {{album}}</span>
+	    <span> {{genre}}</span> 
+	    <button class='deleteButton btn btn-primary data-toggle="modal" data-target="#deleteModal" id='{{@key}}''>Delete</button> 
+  	</div>
 {{/each}}
-
-            

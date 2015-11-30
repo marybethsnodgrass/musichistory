@@ -2,6 +2,7 @@ define(function(require) {
 //dependencies
     var $ = require("jquery");
     var hbs = require("hbs/handlebars");	
+    var templates = require("templates");
 
 //variables for function
 	var moduleSongsObject;
@@ -12,35 +13,24 @@ define(function(require) {
 	return {
 		insertSongstoDOM: function(songData) {
 			//hbs template load with requirejs for SONG-CONTAINER
-			require(["hbs!../templates/songs"], function (songTemplate) {
-				$("#list-of-songs").append(songTemplate(songData));
-			});
+			$("#list-of-songs").html(templates.songs(songData));
 
-			require(["hbs!../templates/artists"], function (songTemplate) {
-				$("#artist-select").append(songTemplate(songData));
-			});
+			// var artistArray = [];
+			// var albumArray = [];
 
-			require(["hbs!../templates/albums"], function (songTemplate) {
-				$("#album-select").append(songTemplate(songData));
-				console.log(songData);
-			});
+			// hbs.registerHelper("noDuplicateArtists", function(options) {
+			// 	if (artistArray.indexOf(this.artist) === -1) {
+			//     	artistArray.push(this.artist);
+			//     	return options.fn(this);
+		 //    	} 
+		 //    });
 
-			var artistArray = [];
-			var albumArray = [];
-
-			hbs.registerHelper("noDuplicateArtists", function(options) {
-				if (artistArray.indexOf(this.artist) === -1) {
-			    	artistArray.push(this.artist);
-			    	return options.fn(this);
-		    	} 
-		    });
-
-		    hbs.registerHelper("noDuplicateAlbums", function(options) {
-				if (albumArray.indexOf(this.album) === -1) {
-			    	artistArray.push(this.album);
-			    	return options.fn(this);
-		    	} 
-		    });
+		 //    hbs.registerHelper("noDuplicateAlbums", function(options) {
+			// 	if (albumArray.indexOf(this.album) === -1) {
+			//     	artistArray.push(this.album);
+			//     	return options.fn(this);
+		 //    	} 
+		 //    });
 		}
 	};
 });
