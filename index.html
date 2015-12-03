@@ -4,79 +4,37 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="styles/main.css">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>NSS Starter Kit - Angular</title>
+  <link rel="stylesheet" type="text/css" href="lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 
-  <body>
-    <!--  NAV BAR -->
-    <header id="nav-header">
-      <nav>
-        <div>
-          <a id="list-music-link" href="#">List Music</a>
-        </div>
-        <div class="center">
-          <a id="add-music-link" href="#">Add Music</a>
-        </div>
-        <div>
-          <a id="profile-link" href="#">Profile</a>
-        </div>
-      </nav>
-    </header> 
-
-    <!--  add music view -->
-    <div id="add-music" class="hidden">
-      <div id="add-music-content"> 
-        Song <input type="text" id="songInput">
-        Artist <input type="text" id="artistInput">
-        Album <input type="text" id="albumInput">
-        <div id="addButton-div">
-          <input type="submit" id="addButton" value="Add" id="addButton">
-        </div>  
+<body ng-app="musicHistoryApp">
+  <!--  NAV BAR -->
+  <header id="nav-header">
+    <nav>
+      <div>
+        <a id="list-music-link" href="#">List Music</a>
       </div>
-    </div>
-      
-    <!--  list music and search boxes -->
-    <div id="list-music"> 
-
-      <!--  Search box-->
-      <div id="search" class="border">
-        <form action="#" method="POST" id="song-filter">
-          <label for="length">Song length:</label>
-          <input type="range" name="length" min="1" max="6" step=".5">
-          <label for="artist-select">Artist:</label>
-          <select id="artist-select" name="artist-select">
-          </select>
-          <label for="album-select">Album:</label>
-          <select id="album-select" name="album-select">
-          </select>
-          <label for="genre-options">Genre:</label>
-          <p>
-            <input type="checkbox" name="genre-options" value="rock"> Rock
-            <input type="checkbox" name="genre-options" value="pop"> Pop
-          </p>
-          <p>  
-            <input type="checkbox" name="genre-options" value="blues"> Blues
-            <input type="checkbox" name="genre-options" value="jlassical"> Classical
-          </p>
-          <p>
-            <input type="checkbox" name="genre-options" value="jazz"> Jazz
-            <input type="checkbox" name="genre-options" value="hip-hop"> Hip-hop
-          </p>
-          <div id="filter-div">
-            <input type="submit" id="filterButton" value="Filter">
-          </div>  
-        </form>
+      <div class="center">
+        <a id="add-music-link" href="#">Add Music</a>
       </div>
-
-      <!--  Song List/Results box--> 
-      <div id="results">
-        <section id="list-of-songs">      
-        </section>
-        <button id="moreButton">'More>'</button>
+      <div>
+        <a id="profile-link" href="#">Profile</a>
       </div>
-    </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"> </script>
+    </nav>
+  </header> 
+
+  <div ng-view></div>
+
   <script src="lib/bower_components/angular/angular.min.js"></script>
-  </body>
+  <script src="lib/bower_components/angular-route/angular-route.min.js"></script>
+
+  <script src="app/app.js"></script>
+  <script src="app/controllers/songlistCtrl.js"></script>
+  <script src="app/controllers/newSongFormCtrl.js"></script>
+</body>
 </html>
