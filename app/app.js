@@ -8,5 +8,6 @@ app.config(['$routeProvider',function($routeProvider) {
       when('/songs/new', {
         templateUrl: 'partials/newSongForm.html',
         controller: 'newSongFormCtrl'
-      });
+      })
+      .otherwise('/songs/list');
   }]);

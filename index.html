@@ -17,23 +17,25 @@
   <header id="nav-header">
     <nav>
       <div>
-        <a id="list-music-link" href="#">List Music</a>
+        <a id="list-music-link" href="/#/songs/list">List Music</a>
       </div>
       <div class="center">
-        <a id="add-music-link" href="#">Add Music</a>
+        <a id="add-music-link" href="/#/songs/new">Add Music</a>
       </div>
       <div>
-        <a id="profile-link" href="#">Profile</a>
+        <a id="profile-link" href="/#/user/profile">Profile</a>
       </div>
     </nav>
   </header> 
 
-  <div ng-view></div>
+  <div ng-view>
+  </div>
 
   <script src="lib/bower_components/angular/angular.min.js"></script>
   <script src="lib/bower_components/angular-route/angular-route.min.js"></script>
 
   <script src="app/app.js"></script>
+  <script src="app/factories/getSongData.js"></script>
   <script src="app/controllers/songlistCtrl.js"></script>
   <script src="app/controllers/newSongFormCtrl.js"></script>
 </body>
